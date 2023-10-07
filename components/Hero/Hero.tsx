@@ -9,10 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
-    tl.to(".banner", { width: "50%", transformOrigin: "100%", duration: 1 })
+    tl.to(".banner", {
+      width: "50%",
+      transformOrigin: "100%",
+      duration: 1,
+      ease: "power1.inOut",
+    })
       .to("#banner1", { clipPath: "circle(100%)" })
-      .to("#banner2", { clipPath: "circle(100%)" })
-      .to("#banner3", { clipPath: "circle(100%)" });
+      .to(
+        "#story1",
+        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
+        "<"
+      )
+      .to("#banner2", { clipPath: "circle(100%)", ease: "power1.inOut" })
+      .to(
+        "#story2",
+        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
+        "<"
+      )
+      .to("#banner3", { clipPath: "circle(100%)", ease: "power1.inOut" })
+      .to(
+        "#story3",
+        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
+        "<"
+      );
 
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
