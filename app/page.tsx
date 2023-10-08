@@ -5,7 +5,7 @@ import { FC } from "react";
 
 export default function Home() {
   return (
-    <main className="h-screen w-full mx-auto px-10">
+    <main className="h-screen w-full mx-auto">
       <Hero />
     </main>
   );

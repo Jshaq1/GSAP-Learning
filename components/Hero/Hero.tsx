@@ -1,42 +1,17 @@
 "use client";
 import React from "react";
-import { Banner, BannerStory } from "..";
+import { Banner, BannerStory, HeroAnimations, berries, blueberries } from "..";
 import { useLayoutEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.to(".banner", {
-      width: "50%",
-      transformOrigin: "100%",
-      duration: 1,
-      ease: "power1.inOut",
-    })
-      .to("#banner1", { clipPath: "circle(100%)" })
-      .to(
-        "#story1",
-        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
-        "<"
-      )
-      .to("#banner2", { clipPath: "circle(100%)", ease: "power1.inOut" })
-      .to(
-        "#story2",
-        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
-        "<"
-      )
-      .to("#banner3", { clipPath: "circle(100%)", ease: "power1.inOut" })
-      .to(
-        "#story3",
-        { transform: "translate(0,0)", opacity: "1", ease: "power1.inOut" },
-        "<"
-      );
-
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
-        animation: tl,
+        animation: HeroAnimations(),
         trigger: ".hero",
         start: "top 100",
         end: "+=10000",
@@ -48,16 +23,24 @@ const Hero = () => {
   }, []);
 
   const bannerInfo = [
-    ["Rethink Party", "/yadda", "Innovative party solutions for all occasions"],
-    ["Decoration", "/yadda", "Dream it up and we make it happen. No limits. "],
+    [
+      "we gooey",
+      berries,
+      "Locally sourced produce from some of perths finest organic markets",
+    ],
+    [
+      "you gooey",
+      blueberries,
+      "Dream it up and we make it happen. No limits. ",
+    ],
     [
       "Audio / Visual",
-      "/yadda",
+      berries,
       "We'll handle the tricky stuff, you handle your drinks",
     ],
     [
       "Entertainment",
-      "/yadda",
+      berries,
       "Friends are a bit dull? Let us get the party started",
     ],
   ];

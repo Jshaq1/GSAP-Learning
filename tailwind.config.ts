@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        sm: '0.8rem',
+        base: '1rem',
+        xl: '1.25rem',
+        '2xl': '1.563rem',
+        '3xl': '1.953rem',
+        '4xl': '4.441rem',
+        '5xl': '10.052rem',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -25,9 +34,14 @@ const config: Config = {
       lineHeight: {
         'extra-loose': '1.5',
         '12': '3rem',
-      }
+      },
+      colors: {
+        'regal-green': '#82330F',
+      },
     },
   },
   plugins: [],
 }
+
+
 export default config
